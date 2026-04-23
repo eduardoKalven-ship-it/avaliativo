@@ -51,8 +51,8 @@ produtos: produto[] = [
   },
   {
     id: 5,
-    nome: 'BMW R1000r',
-    descricao: 'BMW R1000r é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
+    nome: 'BMW S1000r',
+    descricao: 'BMW S1000r é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
     preco: 179.900,
     imgs: '[]',
   },
