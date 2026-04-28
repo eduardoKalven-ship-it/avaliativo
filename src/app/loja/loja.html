@@ -9,100 +9,12 @@
             <h3>{{ produto.preco }}</h3>
             <h3>{{ produto.imgs }}</h3>
             <h3>{{ produto.descricao }}</h3>
-            <button>Comprar</button>
-        </div>
-        }
-                @for (produto of produtos; track produto.id ){
-        <div class="card">
-            <img src="https://s2-autoesporte.glbimg.com/XUrRM3091-k-vd2Uj9kPyKLgCa0=/0x0:620x413/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/G/i/RjyZYBTTS5muDR3JYRAg/2017-11-07-cb1000frente.jpg"
-                alt="CB1000">
-            <h3>{{ produto.nome  }}</h3>
-            <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.imgs }}</h3>
-            <h3>{{ produto.descricao }}</h3>
-            <button>Comprar</button>
-        </div>
-        }
-                        @for (produto of produtos; track produto.id ){
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1597497287565-a38cfaa4e762?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Ninja Kawasaki">
-            <h3>{{ produto.nome  }}</h3>
-            <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.imgs }}</h3>
-            <h3>{{ produto.descricao }}</h3>
-            <button>Comprar</button>
-        </div>
-        }
-                        @for (produto of produtos; track produto.id ){
-        <div class="card">
-            <img src="https://www.motoproworks.com/cdn/shop/products/BMW-1200_GS-5.jpg?v=1715093662"
-                alt="R1200">
-            <h3>{{ produto.nome  }}</h3>
-            <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.imgs }}</h3>
-            <h3>{{ produto.descricao }}</h3>
-            <button>Comprar</button>
-        </div>
-        }
-                        @for (produto of produtos; track produto.id ){
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1635073943212-f34dfbfcc3b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="S1000R">
-            <h3>{{ produto.nome  }}</h3>
-            <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.imgs }}</h3>
-            <h3>{{ produto.descricao }}</h3>
-            <button>Comprar</button>
-        </div>
-        }
-                             @for (produto of produtos; track produto.id ){
-        <div class="card">
-            <img src="https://motoccs.com/wp-content/uploads/2024/11/ccs_motos_sines_centro_ciclista_sineense_portugal_motociclos_scooters_eletricos_minicarros_quadriciclos_atv_utv_ssv_yamaha_hyper_naked_mt_09_grey.jpg"
-                alt="MT-09">
-            <h3>{{ produto.nome  }}</h3>
-            <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.imgs }}</h3>
-            <h3>{{ produto.descricao }}</h3>
-            <button>Comprar</button>
-        </div>
-        }
+            
+            <button 
+                (click)="adicionarAoCarrinho(produto)">Comprar
+            </button>
+
+            }
 
 
-        <!-- <div class="card">
-            <img src="https://s2-autoesporte.glbimg.com/I5fInR0dZWB3qA8HHcyEtz_h3L4=/0x0:4500x3000/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/R/A/R4GVIVS7mSadHlGRcZaA/honda-cb-1000r-2-45-.jpg" alt="CB1000">
-            <h3>Honda CB1000</h3>
-            <p>R$ 199.000</p>
-            <button>Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1682980798344-6feac9455e66?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kawasaki Ninja">
-            <h3>Kawasaki Ninja</h3>
-            <p>R$ 259.000</p>
-            <button>Comprar</button>
-        </div>
-
-              <div class="card">
-            <img src="https://s2-autoesporte.glbimg.com/WCC2LMjWcrc51js7-I4cEvbRO4A=/0x0:620x430/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/B/j/EXqa4IS3G4j5kdNzgWJA/2016-07-01-070414-2015-bmw-r1200gs-08.jpg" alt="Kawasaki Ninja">
-            <h3>BMW R1200</h3>
-            <p>R$ 179.900</p>
-            <button>Comprar</button>
-        </div>
-
-              <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiwJSTLYIgaZ4QQ7JxvyzGQMNXKlQ2tZ3Yzg&s" alt="Kawasaki Ninja">
-            <h3>BMW R1000RR</h3>
-            <p>R$ 88.000</p>
-            <button>Comprar</button>
-        </div>
-
-              <div class="card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMWm3qMUDrJqJHjrndHH3brIx6EGlaLwV9Jw&s" alt="Kawasaki Ninja">
-            <h3>Yamaha MT-09</h3>
-            <p>R$ 129.900</p>
-            <button>Comprar</button>
-        </div> -->
-
-    </section>
-</div>
+   

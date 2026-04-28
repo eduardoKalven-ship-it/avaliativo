@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 
-export interface produto {
+export interface Produto {
   id: number
   nome: string
   descricao: string
   preco: number
   imgs: string
+  estoque: number
 }
 
 @Component({
@@ -18,13 +19,15 @@ export interface produto {
 export class Loja { 
 
 
-produtos: produto[] = [
-  {
+produtos: Produto[] = [
+
+  { 
     id: 1,
     nome: 'Yamaha R1',
     descricao: 'Yamaha YZF-R1 é uma superesportiva icônica de 1000cc, lançada em 1998, conhecida por seu alto desempenho e tecnologia derivada da MotoGP.',
     preco: 159.900,
-    imgs: '[]',
+    imgs: '[https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg]',
+    estoque: 10
   },
 
   {
@@ -33,6 +36,7 @@ produtos: produto[] = [
     descricao: 'CB 1000R é uma motocicleta esportiva da Honda, conhecida por seu design aerodinâmico e desempenho potente.',
     preco: 199.900,
     imgs: '[]',
+    estoque: 10
   },
 
   {
@@ -41,6 +45,7 @@ produtos: produto[] = [
     descricao: 'kawasaki Ninja ZX-10R é uma motocicleta esportiva da Kawasaki, conhecida por seu design aerodinâmico e desempenho potente.',
     preco: 259.900,
     imgs: '[]',
+    estoque: 10
   },
   {
     id: 4,
@@ -48,6 +53,7 @@ produtos: produto[] = [
     descricao: 'BMW R1200 é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
     preco: 199.900,
     imgs: '[]',
+    estoque: 10
   },
   {
     id: 5,
@@ -55,6 +61,7 @@ produtos: produto[] = [
     descricao: 'BMW S1000r é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
     preco: 179.900,
     imgs: '[]',
+    estoque: 10
   },
   {
     id: 6,
@@ -62,7 +69,17 @@ produtos: produto[] = [
     descricao: 'Yamaha mt-09 é uma motocicleta esportiva da Yamaha, conhecida por seu design aerodinâmico e desempenho potente.',
     preco: 129.900,
     imgs: '[]',
+    estoque: 10
   },
 
 ]
+
+
+carrinho = signal<{produto: Produto, quantidade: number}[]>([]);
+adicionarAoCarrinho(produto: Produto){
+  console.log('adicionarAoCarrinho...\n' + produto.estoque)
+    if (produto.estoque > 0) {}   // pra conferir o estoque
+      return
+
+    }
 }
