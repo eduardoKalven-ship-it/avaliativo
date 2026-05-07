@@ -4,17 +4,56 @@
         @for (produto of produtos; track produto.id ){
         <div class="card">
             <img src=""
-                alt="R1">
+                alt="Motos">
             <h3>{{ produto.nome  }}</h3>
             <h3>{{ produto.preco }}</h3>
             <h3>{{ produto.imgs }}</h3>
             <h3>{{ produto.descricao }}</h3>
+            <h3>{{ produto.estoque }}</h3>
             
             <button 
                 (click)="adicionarAoCarrinho(produto)">Comprar
             </button>
 
             }
+            <div>
+        <section class="Carrinho">
 
+         @for (item of carrinho; track item.id) {
 
-   
+          <div class="card-carrinho">
+
+            <div class="info">
+
+                <h3>{{ produto.nome }}</h3>
+                <h3>{{ produto.preco }}</h3>
+                <h3>{{ produto.imgs }}</h3>
+                <h3>{{ produto.descricao }}</h3>
+                <h3>{{ produto.estoque }}</h3>
+
+            </div>
+
+            <div class="quantidade">
+
+                <button (click)="diminuirQuantidade(item)">
+                    -
+                </button>
+
+                <span>{{ item.quantidade }}</span>
+
+                <button (click)="aumentarQuantidade(item)">
+                    +
+                </button>
+
+            </div>
+         </div>
+
+        }
+
+              <button class="finalizar">
+                Finalizar Compra
+                </button>
+
+             </section>
+        </div>
+</div>  
