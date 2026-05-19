@@ -1,59 +1,49 @@
 <div>
     <section class="produtos">
 
-        @for (produto of produtos; track produto.id ){
+        @for (produto of produtos; track produto.id) {
         <div class="card">
-            <img src=""
-                alt="Motos">
-            <h3>{{ produto.nome  }}</h3>
+            <img [src]="produto.imgs" alt="Moto">
+            <h3>{{ produto.nome }}</h3>
             <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.imgs }}</h3>
             <h3>{{ produto.descricao }}</h3>
             <h3>{{ produto.estoque }}</h3>
-            
-            <button 
-                (click)="adicionarAoCarrinho(produto)">Comprar
+
+            <button (click)="adicionarAoCarrinho(produto)">
+                Comprar
             </button>
+        </div>
+        }
 
-            }
-            <div>
-        <section class="Carrinho">
+    </section>
 
-         @for (item of carrinho; track item.id) {
+    <section class="carrinho">
 
-          <div class="card-carrinho">
+        @for (item of carrinho(); track item.id) {
+
+        <div class="card-carrinho">
 
             <div class="info">
-
-                <h3>{{ produto.nome }}</h3>
-                <h3>{{ produto.preco }}</h3>
-                <h3>{{ produto.imgs }}</h3>
-                <h3>{{ produto.descricao }}</h3>
-                <h3>{{ produto.estoque }}</h3>
-
+                <h3>{{ item.nome }}</h3>
+                <h3>{{ item.preco }}</h3>
+                <img [src]="item.imgs" alt="Moto">
+                <h3>{{ item.descricao }}</h3>
+                <h3>{{ item.estoque }}</h3>
             </div>
 
             <div class="quantidade">
-
-                <button (click)="diminuirQuantidade(item)">
-                    -
-                </button>
-
+                <button (click)="diminuirQuantidade(item)">-</button>
                 <span>{{ item.quantidade }}</span>
-
-                <button (click)="aumentarQuantidade(item)">
-                    +
-                </button>
-
+                <button (click)="aumentarQuantidade(item)">+</button>
             </div>
-         </div>
+
+        </div>
 
         }
 
-              <button class="finalizar">
-                Finalizar Compra
-                </button>
+        <button class="finalizar">
+            Finalizar Compra
+        </button>
 
-             </section>
-        </div>
-</div>  
+    </section>
+</div>

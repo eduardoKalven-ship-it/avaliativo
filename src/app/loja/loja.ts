@@ -1,14 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { Produto } from '../models.js/produto';
+import { CartService } from '../cart.service';
 
 
-export interface Produto {
-  id: number
-  nome: string
-  descricao: string
-  preco: number
-  imgs: string
-  estoque: number
-}
 
 @Component({
   selector: 'app-loja',
@@ -74,50 +68,14 @@ produtos: Produto[] = [
 
 ]
 
-  // cria o carrinho
-  // guarda produto + quantidade
-  carrinho = signal<{ produto: Produto, quantidade: number }[]>([]);
+
+private cartService = inject(CartService);
 
 
+adicionarAoCarrinho(produto: Produto) {
+this.cartService.adicionarAoCarrinho(produto);
 
 
-  // adiciona produto ao carrinho
-  adicionarAoCarrinho(produto: Produto) {
+  } 
 
-    // impede adicionar produto sem estoque
-    if (produto.estoque <= 0) {
-      console.log('Produto esgotado!');
-      return;
-    }
-
-    // procura produto dentro do carrinho
-    const itemNoCarrinho = this.carrinho().find(
-      (item) => item.produto.id === produto.id
-    );
-
-    // se já existir
-    if (itemNoCarrinho) {
-
-      // aumenta quantidade
-      itemNoCarrinho.quantidade += 1;
-
-      // atualiza signal
-      this.carrinho.update((itens) => [...itens]);
-
-    } else {
-
-      // se não existir adiciona novo item
-      this.carrinho.update((itens) => [
-        ...itens,
-
-        {
-          produto: produto,
-          quantidade: 1
-        }
-
-      ]);
-
-    }
-
-  }
 }
