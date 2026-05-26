@@ -10,72 +10,72 @@ import { CartService } from '../cart.service';
   templateUrl: './loja.html',
   styleUrl: './loja.css',
 })
-export class Loja { 
+export class Loja {
 
 
-produtos: Produto[] = [
+  produtos: Produto[] = [
 
-  { 
-    id: 1,
-    nome: 'Yamaha R1',
-    descricao: 'Yamaha YZF-R1 é uma superesportiva icônica de 1000cc, lançada em 1998, conhecida por seu alto desempenho e tecnologia derivada da MotoGP.',
-    preco: 159.900,
-    imgs: '[https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg]',
-    estoque: 10
-  },
+    {
+      id: 1,
+      nome: 'Yamaha R1',
+      descricao: 'Yamaha YZF-R1 é uma superesportiva icônica de 1000cc, lançada em 1998, conhecida por seu alto desempenho e tecnologia derivada da MotoGP.',
+      preco: 159.900,
+      imgs: ['https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg'],
+      estoque: 10
+    },
 
-  {
-    id: 2,
-    nome: 'CB 1000R',
-    descricao: 'CB 1000R é uma motocicleta esportiva da Honda, conhecida por seu design aerodinâmico e desempenho potente.',
-    preco: 199.900,
-    imgs: '[]',
-    estoque: 10
-  },
+    {
+      id: 2,
+      nome: 'CB 1000R',
+      descricao: 'CB 1000R é uma motocicleta esportiva da Honda, conhecida por seu design aerodinâmico e desempenho potente.',
+      preco: 199.900,
+      imgs: ['https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg'],
+      estoque: 10
+    },
 
-  {
-    id: 3,
-    nome: 'kawasaki Ninja ZX-10R',
-    descricao: 'kawasaki Ninja ZX-10R é uma motocicleta esportiva da Kawasaki, conhecida por seu design aerodinâmico e desempenho potente.',
-    preco: 259.900,
-    imgs: '[]',
-    estoque: 10
-  },
-  {
-    id: 4,
-    nome: 'BMW R1200',
-    descricao: 'BMW R1200 é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
-    preco: 199.900,
-    imgs: '[]',
-    estoque: 10
-  },
-  {
-    id: 5,
-    nome: 'BMW S1000r',
-    descricao: 'BMW S1000r é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
-    preco: 179.900,
-    imgs: '[]',
-    estoque: 10
-  },
-  {
-    id: 6,
-    nome: 'Yamaha mt-09',
-    descricao: 'Yamaha mt-09 é uma motocicleta esportiva da Yamaha, conhecida por seu design aerodinâmico e desempenho potente.',
-    preco: 129.900,
-    imgs: '[]',
-    estoque: 10
-  },
+    {
+      id: 3,
+      nome: 'kawasaki Ninja ZX-10R',
+      descricao: 'kawasaki Ninja ZX-10R é uma motocicleta esportiva da Kawasaki, conhecida por seu design aerodinâmico e desempenho potente.',
+      preco: 259.900,
+      imgs: ['https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg']  ,
+      estoque: 10
+    },
+    {
+      id: 4,
+      nome: 'BMW R1200',
+      descricao: 'BMW R1200 é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
+      preco: 199.900,
+      imgs: ['https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg'],
+      estoque: 10
+    },
+    {
+      id: 5,
+      nome: 'BMW S1000r',
+      descricao: 'BMW S1000r é uma motocicleta esportiva da BMW, conhecida por seu design aerodinâmico e desempenho potente.',
+      preco: 179.900,
+      imgs: ['https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg'],
+      estoque: 10
+    },
+    {
+      id: 6,
+      nome: 'Yamaha mt-09',
+      descricao: 'Yamaha mt-09 é uma motocicleta esportiva da Yamaha, conhecida por seu design aerodinâmico e desempenho potente.',
+      preco: 129.900,
+      imgs: ['https://i0.statig.com.br/bancodeimagens/9m/xj/47/9mxj47ud5j8h7vdb8itg7ih6x.jpg'],
+      estoque: 10
+    },
 
-]
-
-
-private cartService = inject(CartService);
+  ]
 
 
-adicionarAoCarrinho(produto: Produto) {
-this.cartService.adicionarAoCarrinho(produto);
+  private cartService = inject(CartService);
 
 
-  } 
+  adicionarAoCarrinho(produto: Produto) {
+    this.cartService.adicionarAoCarrinho(produto);
+
+
+  }
 
 }

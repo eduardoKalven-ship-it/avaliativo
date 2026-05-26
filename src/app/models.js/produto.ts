@@ -3,7 +3,7 @@ export interface Produto {
     nome: string
     descricao: string
     preco: number
-    imgs: string
+    imgs: string[];
     estoque: number
 }
 
