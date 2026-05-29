@@ -1,49 +1,45 @@
-<div>
-    <section class="produtos">
+<section class="banner">
 
-        @for (produto of produtos; track produto.id) {
-        <div class="card">
-            <img [src]="produto.imgs[0]" alt="Moto">
+    <h1>
+        MOTOS PROJETADAS PARA
+        <span>GRANDES AVENTURAS</span>
+    </h1>
+
+    <div class="categorias">
+        <button class="ativo">Esportivas</button>
+        
+    </div>
+
+    @for (produto of produtos; track produto.id) {
+
+    <div class="conteudo">
+
+        <h2>{{ produto.nome }}</h2>
+
+        <img [src]="produto.imgs[0]" alt="Moto">
+
+        <div class="info">
+
             <h3>{{ produto.nome }}</h3>
-            <h3>{{ produto.preco }}</h3>
-            <h3>{{ produto.descricao }}</h3>
-            <h3>{{ produto.estoque }}</h3>
 
-            <button (click)="adicionarAoCarrinho(produto)">
+            <p>{{ produto.descricao }}</p>
+
+            <h4>
+                R$ {{ produto.preco }}
+            </h4>
+
+            <span>
+                Estoque: {{ produto.estoque }}
+            </span>
+
+            <button class="btn">
                 Comprar
             </button>
-        </div>
-        }
-
-    </section>
-
-    <!-- <section class="carrinho">
-
-        @for (item of carrinho(); track item.id) {
-
-        <div class="card-carrinho">
-
-            <div class="info">
-                <h3>{{ item.nome }}</h3>
-                <h3>{{ item.preco }}</h3>
-                <img [src]="item.imgs" alt="Moto">
-                <h3>{{ item.descricao }}</h3>
-                <h3>{{ item.estoque }}</h3>
-            </div>
-
-            <div class="quantidade">
-                <button >-</button>
-                <span>{{ item.quantidade }}</span>
-                <button >+</button>
-            </div>
 
         </div>
 
-        }
+    </div>
 
-        <button class="finalizar">
-            Finalizar Compra
-        </button>
+    }
 
-    </section> -->
-</div>
+</section>
