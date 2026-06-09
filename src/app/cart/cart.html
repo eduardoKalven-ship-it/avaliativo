@@ -1,0 +1,44 @@
+<h1>Meu Carrinho</h1>
+
+<p>
+  {{ cartService.carrinho().length }}
+  item(ns) no carrinho
+</p>
+
+@for (item of cartService.carrinho(); track item.produto.id) {
+
+<div class="item-carrinho">
+
+  <img [src]="item.produto.imgs[0]" width="250">
+
+  <div class="info">
+
+    <h2>{{ item.produto.nome }}</h2>
+
+    <p>{{ item.produto.descricao }}</p>
+
+    <p>
+      Quantidade:
+      {{ item.quantidade }}
+    </p>
+
+    <h3>
+      R$ {{ item.produto.preco * item.quantidade }}
+    </h3>
+
+    <button
+    (click)="removerDoCarrinho(item.produto.id)">
+      Remover Item
+    </button>
+
+  </div>
+
+</div>
+
+<hr>
+
+}
+
+<h2>
+  Total: R$ {{ calcularTotal() }}
+</h2>

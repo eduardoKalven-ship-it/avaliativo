@@ -1,5 +1,7 @@
 <section class="banner">
 
+    <a href="/">Início</a>
+
     <h1>
         MOTOS PROJETADAS PARA
         <span>GRANDES AVENTURAS</span>
@@ -10,13 +12,14 @@
         
     </div>
 
+
     @for (produto of produtos; track produto.id) {
 
     <div class="conteudo">
 
         <h2>{{ produto.nome }}</h2>
 
-        <img [src]="produto.imgs[0]" alt="Moto">
+        <img id = imgs [src]="produto.imgs[0]" alt="Moto">
 
         <div class="info">
 
@@ -32,11 +35,15 @@
                 Estoque: {{ produto.estoque }}
             </span>
 
-            <button class="btn">
-                Comprar
-            </button>
+       <button class="btn" (click)="adicionarAoCarrinho(produto)">
+           Comprar
+        </button>
 
         </div>
+
+         <button routerLink="/carrinho">
+            Ver Carrinho
+         </button>
 
     </div>
 
