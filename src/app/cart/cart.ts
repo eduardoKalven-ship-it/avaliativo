@@ -12,6 +12,7 @@ export class Cart {
 
   carrinho = this.cartService.carrinho;
 
+
   ngOnInit() {
     this.carrinho = this.cartService.carrinho;
     console.log(this.carrinho());
@@ -24,4 +25,25 @@ export class Cart {
   calcularTotal() {
     return this.cartService.calcularTotal();
   }
+  aumentarQuantidade(id: number) {
+   this.cartService.carrinho.update(carrinho =>
+    carrinho.map(item =>
+      item.produto.id === id
+        ? { ...item, quantidade: item.quantidade + 1 }
+        : item
+    )
+  );
+  }
+
+  diminuirQuantidade(id: number) {
+   this.cartService.carrinho.update(carrinho =>
+    carrinho
+      .map(item =>
+        item.produto.id === id
+          ? { ...item, quantidade: item.quantidade - 1 }
+          : item
+      )
+      .filter(item => item.quantidade > 0)
+  );
+}
 }

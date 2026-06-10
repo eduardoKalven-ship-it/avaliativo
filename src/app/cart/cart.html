@@ -1,9 +1,22 @@
-<h1>Meu Carrinho</h1>
+<div class="Inicio">
+    <a href="/">Início</a>
+</div>
 
-<p>
-  {{ cartService.carrinho().length }}
-  item(ns) no carrinho
-</p>
+    <img class="fundo"
+     src="https://images.unsplash.com/photo-1677587690975-20d44c7e6d31?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+     alt="fundo">
+
+<div class="cabecalho-carrinho">
+
+
+    <h1>🛒 Meu Carrinho</h1>
+
+    <p>
+        {{ cartService.carrinho().length }}
+        item(ns) no carrinho
+    </p>
+</div>
+
 
 @for (item of cartService.carrinho(); track item.produto.id) {
 
@@ -17,7 +30,19 @@
 
     <p>{{ item.produto.descricao }}</p>
 
-    <p>
+<div class="quantidade">
+
+  <button (click)="diminuirQuantidade(item.produto.id)">
+    -
+  </button>
+
+  <span>{{ item.quantidade }}</span>
+
+  <button (click)="aumentarQuantidade(item.produto.id)">
+    +
+  </button>
+
+</div>    <p>
       Quantidade:
       {{ item.quantidade }}
     </p>
@@ -38,7 +63,12 @@
 <hr>
 
 }
-
+<div>
 <h2>
   Total: R$ {{ calcularTotal() }}
 </h2>
+    <button class="finalizar">
+        Finalizar Compra
+    </button>
+</div>
+
